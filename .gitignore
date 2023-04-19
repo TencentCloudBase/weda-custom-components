@@ -1,0 +1,7 @@
+node_modules
+.temp
+package-lock.json
+yarn.lock
+storybook-static
+.env
+__snapshots__

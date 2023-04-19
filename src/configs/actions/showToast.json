@@ -1,0 +1,42 @@
+{
+  "$schema": "https://comp-public-1303824488.cos.ap-shanghai.myqcloud.com/schema/lcds_action.json",
+  "data": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "title": "标题",
+        "type": "string",
+        "default": "提示的内容"
+      },
+      "icon": {
+        "title": "图标",
+        "type": "string",
+        "default": "success",
+        "x-component": "radio",
+        "enum": [
+          {
+            "label": "success",
+            "value": "success"
+          },
+          {
+            "label": "loading",
+            "value": "loading"
+          },
+          {
+            "label": "none",
+            "value": "none"
+          }
+        ]
+      },
+      "duration": {
+        "title": "提示的延迟时间",
+        "type": "number",
+        "default": 1500
+      }
+    }
+  },
+  "meta": {
+    "title": "自定义提示",
+    "description": "自定义提示"
+  }
+}

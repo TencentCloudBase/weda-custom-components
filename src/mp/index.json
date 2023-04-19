@@ -1,0 +1,8 @@
+{
+  "components": {
+    "Button": "components/button/index"
+  },
+  "actions": {
+    "showToast": "actions/showToast/index"
+  }
+}

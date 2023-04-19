@@ -1,0 +1,3 @@
+<button class="wx-button" style="{{style}}" size="{{size}}" type="{{type}}" plain="{{plain}}" loading="{{loading}}" disabled="{{disabled}}" bind:tap="triggerCustomEvent">
+  {{text}}
+</button>

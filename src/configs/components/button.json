@@ -1,0 +1,72 @@
+{
+  "$schema": "https://comp-public-1303824488.cos.ap-shanghai.myqcloud.com/schema/lcds_component.json",
+  "data": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "title": "按钮文字",
+        "default": "按钮",
+        "type": "string"
+      },
+      "size": {
+        "title": "按钮大小",
+        "type": "string",
+        "default": "default",
+        "x-component": "radio",
+        "enum": [
+          {
+            "label": "default",
+            "value": "default"
+          },
+          {
+            "label": "mini",
+            "value": "mini"
+          }
+        ]
+      },
+      "type": {
+        "title": "按钮类型",
+        "type": "string",
+        "default": "primary",
+        "x-component": "radio",
+        "enum": [
+          {
+            "label": "default",
+            "value": "default"
+          },
+          {
+            "label": "primary",
+            "value": "primary"
+          },
+          {
+            "label": "warn",
+            "value": "warn"
+          }
+        ]
+      },
+      "loading": {
+        "title": "加载中",
+        "type": "boolean",
+        "default": false
+      },
+      "disabled": {
+        "title": "禁用",
+        "type": "boolean",
+        "default": false
+      },
+      "plain": {
+        "title": "镂空",
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "events": [{ "name": "customevent", "title": "自定义事件" }],
+  "meta": {
+    "title": "按钮",
+    "description": "按钮组件，兼容小程序和H5平台",
+    "icon": "../icons/button.svg",
+    "category": "表单",
+    "componentOrder": 1
+  }
+}

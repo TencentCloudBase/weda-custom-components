@@ -1,0 +1,221 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import Code from './assets/code-brackets.svg'
+import Colors from './assets/colors.svg'
+import Comments from './assets/comments.svg'
+import Direction from './assets/direction.svg'
+import Flow from './assets/flow.svg'
+import Plugin from './assets/plugin.svg'
+import Repo from './assets/repo.svg'
+import StackAlt from './assets/stackalt.svg'
+
+<Meta title="Introduction" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .link-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+  }
+
+  @media (min-width: 620px) {
+    .link-list {
+      row-gap: 20px;
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media all and (-ms-high-contrast:none) {
+  .link-list {
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr;
+    }
+  }
+
+  .link-item {
+    display: block;
+    padding: 20px 30px 20px 15px;
+    border: 1px solid #00000010;
+    border-radius: 5px;
+    transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+    color: #333333;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .link-item:hover {
+    border-color: #1EA7FD50;
+    transform: translate3d(0, -3px, 0);
+    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+  }
+
+  .link-item:active {
+    border-color: #1EA7FD;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .link-item strong {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  .link-item img {
+    height: 40px;
+    width: 40px;
+    margin-right: 15px;
+    flex: none;
+  }
+
+  .link-item span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  
+`}</style>
+
+# 腾讯云微搭低代码组件库模板
+
+[腾讯云微搭低代码]平台支持你将自己的组件导入成低码平台可运行的自定义代码组件，本项目即是腾讯云微搭低代码平台的组件库模板，介绍如何编写一个可以在微搭使用的组件库。
+
+当前支持[小程序组件]和 [react] 组件。
+
+## 组件库
+
+微搭组件库使用各平台/框架标准的组件格式，通过类型文件描述好组件的行为、出参、入参及元数据等信息和微搭平台做对接。
+
+对于小程序平台
+
+## 项目目录
+
+```
+.
+├── .storybook
+└── src
+    ├── test
+    ├── configs
+    │   ├── actions
+    │   └── components
+    ├── mp
+    │   ├── actions
+    │   └── components
+    ├── stories
+    │   └── assets
+    └── web
+        ├── actions
+        └── components
+```
+
+## 组件配置
+
+TODO
+
+## 开发
+
+组件库开发前置依赖：
+
+1. 进入组件库更目录，安装依赖： `npm i` or `yarn`
+2. 安装云开发命令行工具：`npm i -g @cloudbase/cli` or `yarn global add @cloudbase/cli`
+3. 登录云开发命令行：`tcb login` 并输入密码
+4. 去腾讯云微搭低码控制台创建组件库
+
+### 编写组件
+
+#### 小程序组件
+
+TODO
+
+#### React 组件
+
+TODO
+
+#### 组件描述
+
+TODO
+
+在腾讯云微搭低代码编辑器调试组件库，在当前目录执行：
+
+```
+tcb lowcode debug
+```
+
+组件开发完成后，提交组件到微搭低代码平台：
+
+```
+tcb lowcode publish
+```
+
+组件开发更多信息请[参考文档](https://docs.cloudbase.net/lowcode/custom-components/quick-start/comps.html)。
+
+## 其他
+
+为了让你的组件开发工作更加便捷和稳定，我们集成了 [storybook] 及组件测试工具来辅助组件的开发。虽然 storybook 和组件测试不是必须的，我们仍然建议你使用他们来保证组件始终工作正常。
+
+### 使用 storybook 本地开发
+
+我们已在模板中集成好了 [stroybook] 的使用环境。对于每一个组件你需要
+
+1. 编写 [story](https://storybook.js.org/docs/react/get-started/whats-a-story)，story 是 storybook 的组件状态单元，描述了组件在一组特定状态下的行为。
+2. 当你为组件编写了足够多的用例后，你可以运行 `npm run storybook` 命令来
+
+### 组件测试
+
+我们建议你为你的定义组件编写必要的测试。我们集成进了 jest 和 小程序模拟器来协助组件的多端测试。
+
+TODO
+编写测试
+
+https://jestjs.io/docs/snapshot-testing
+
+```
+npm test
+```
+
+小程序组件测试请参考：
+https://github.com/wechat-miniprogram/miniprogram-simulate
+https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/unit-test.html
+
+[腾讯云微搭低代码]: (https://cloud.tencent.com/product/weda)
+[小程序组件]: (https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
+[react]: (https://reactjs.org/)
+[storybook]: (https://storybook.js.org/)
