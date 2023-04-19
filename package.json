@@ -18,8 +18,10 @@
   "description": "腾讯云微搭低代码组件库模板",
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
     "weui": "^2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.21",

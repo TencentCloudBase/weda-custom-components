@@ -74,3 +74,8 @@ tcb lowcode publish
 ## 许可证
 
 开源协议文档请参阅  [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+[腾讯云微搭低代码]: (https://cloud.tencent.com/product/weda)
+[小程序组件]: (https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
+[react]: (https://reactjs.org/)
+[storybook]: (https://storybook.js.org/)
