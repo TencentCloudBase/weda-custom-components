@@ -1,9 +1,8 @@
-# 微搭低代码自定义组件示例
+<div align="center">
+  <img src="https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/6f756dac-4323-42f5-932b-b1ca911b6693.png" width="400">
+</div>
 
-- [项目介绍](#项目介绍)
-- [组件列表](#组件列表)
-- [使用指南](#使用指南)
-- [贡献指南](#贡献指南)
+<h1 align="center">微搭低代码自定义组件示例</h1>
 
 ## 项目介绍
 
