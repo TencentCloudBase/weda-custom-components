@@ -19,7 +19,8 @@
   "dependencies": {
     "gantt-task-react": "^0.3.9",
     "prop-types": "^15.7.2",
-    "weui": "^2"
+    "weui": "^2",
+    "react-error-boundary": "^3.1.4"
   },
   "peerDependencies": {
     "react": ">=18.0.0"
@@ -41,7 +42,6 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-error-boundary": "^4.0.4",
     "react-scripts": "4.0.3",
     "storybook": "^7.0.7"
   }
