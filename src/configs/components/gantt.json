@@ -1,0 +1,240 @@
+{
+  "$schema": "https://comp-public-1303824488.cos.ap-shanghai.myqcloud.com/schema/lcds_component.json",
+  "data": {
+    "type": "object",
+    "properties": {
+      "tasks": {
+        "title": "任务(Task)",
+        "type": "array",
+        "description": "任务",
+        "x-category": "基础属性",
+        "x-index": 10,
+        "items": {
+          "type": "object",
+          "properties": {}
+        },
+        "x-component": "jsontext",
+        "default": [
+          {
+            "start": "2023-04-01",
+            "end": "2023-04-15",
+            "name": "项目",
+            "id": "ProjectSample",
+            "progress": 25,
+            "type": "project",
+            "hideChildren": false,
+            "displayOrder": 1
+          },
+          {
+            "start": "2023-04-01",
+            "end": "2023-04-02",
+            "name": "计划",
+            "id": "Task 0",
+            "progress": 45,
+            "type": "task",
+            "project": "ProjectSample",
+            "displayOrder": 2
+          },
+          {
+            "start": "2023-04-02",
+            "end": "2023-04-04",
+            "name": "调研",
+            "id": "Task 1",
+            "progress": 25,
+            "dependencies": ["Task 0"],
+            "type": "task",
+            "project": "ProjectSample",
+            "displayOrder": 3
+          },
+          {
+            "start": "2023-04-04",
+            "end": "2023-04-08",
+            "name": "会议",
+            "id": "Task 2",
+            "progress": 10,
+            "dependencies": ["Task 1"],
+            "type": "task",
+            "project": "ProjectSample",
+            "displayOrder": 4
+          },
+          {
+            "start": "2023-04-04",
+            "end": "2023-04-08",
+            "name": "研发",
+            "id": "Task 3",
+            "progress": 2,
+            "dependencies": ["Task 2"],
+            "type": "task",
+            "project": "ProjectSample",
+            "displayOrder": 5
+          },
+          {
+            "start": "2023-04-08",
+            "end": "2023-04-10",
+            "name": "审查",
+            "id": "Task 4",
+            "type": "task",
+            "progress": 70,
+            "dependencies": ["Task 2"],
+            "project": "ProjectSample",
+            "displayOrder": 6
+          },
+          {
+            "start": "2023-04-15",
+            "end": "2023-04-15",
+            "name": "发布",
+            "id": "Task 6",
+            "progress": "25",
+            "type": "milestone",
+            "dependencies": ["Task 4"],
+            "project": "ProjectSample",
+            "displayOrder": 7
+          },
+          {
+            "start": "2023-04-18",
+            "end": "2023-04-19",
+            "name": "团建",
+            "id": "Task 9",
+            "progress": 0,
+            "isDisabled": true,
+            "type": "task"
+          }
+        ],
+        "x-helper-text": "甘特图组件的数据，请查看[组件说明文档](https://github.com/MaTeMaTuK/gantt-task-react#task)",
+        "x-helper-text-color": "#E37318"
+      },
+      "stylingOption": {
+        "title": "样式风格(StylingOption)",
+        "type": "object",
+        "description": "任务",
+        "x-category": "基础属性",
+        "x-index": 20,
+        "items": {
+          "type": "object",
+          "properties": {}
+        },
+        "x-component": "jsontext",
+        "default": { "listCellWidth": "155px", "columnWidth": "65" },
+        "x-helper-text": "样式风格配置，请查看[组件说明文档](https://github.com/MaTeMaTuK/gantt-task-react#stylingoption)"
+      },
+      "displayOption": {
+        "title": "展示项(DisplayOption)",
+        "type": "object",
+        "description": "任务",
+        "x-category": "基础属性",
+        "x-index": 30,
+        "items": {
+          "type": "object",
+          "properties": {}
+        },
+        "x-component": "jsontext",
+        "default": { "viewMode": "Day", "locale": "zh" },
+        "x-helper-text": "展示项配置，请查看[组件说明文档](https://github.com/MaTeMaTuK/gantt-task-react#displayoption)"
+      }
+    }
+  },
+
+  "events": [
+    {
+      "title": "onClick",
+      "name": "onClick",
+      "x-platforms": ["WEB"],
+      "detail": {
+        "task": {
+          "title": "task",
+          "type": "object"
+        }
+      }
+    },
+    {
+      "title": "onSelect",
+      "name": "onSelect",
+      "detail": {
+        "task": {
+          "title": "task",
+          "type": "object"
+        },
+        "isSelected": {
+          "title": "isSelected",
+          "type": "boolean"
+        }
+      },
+      "x-platforms": ["WEB"]
+    },
+    {
+      "title": "onDoubleClick",
+      "name": "onDoubleClick",
+      "detail": {
+        "task": {
+          "title": "task",
+          "type": "object"
+        }
+      },
+      "x-platforms": ["WEB"]
+    },
+    {
+      "title": "onDelete",
+      "name": "onDelete",
+      "detail": {
+        "task": {
+          "title": "task",
+          "type": "object"
+        }
+      },
+      "x-platforms": ["WEB"]
+    },
+    {
+      "title": "onDateChange",
+      "name": "onDateChange",
+      "detail": {
+        "task": {
+          "title": "task",
+          "type": "object"
+        },
+        "children": {
+          "title": "children",
+          "type": "array"
+        }
+      },
+      "x-platforms": ["WEB"]
+    },
+    {
+      "title": "onProgressChange",
+      "name": "onProgressChange",
+      "detail": {
+        "task": {
+          "type": "object",
+          "title": "task"
+        },
+        "children": {
+          "type": "array",
+          "title": "children"
+        }
+      },
+      "x-platforms": ["WEB"]
+    },
+    {
+      "title": "onExpanderClick",
+      "name": "onExpanderClick",
+      "detail": {
+        "task": {
+          "title": "task",
+          "type": "object"
+        }
+      },
+      "x-platforms": ["WEB"]
+    }
+  ],
+  "meta": {
+    "name": "Gantt",
+    "componentName": "Gantt",
+    "title": "甘特图",
+    "description": "甘特图",
+    "icon": "../icons/Icon.svg",
+    "category": "图表",
+    "categoryOrder": 400,
+    "componentOrder": 250,
+    "platform": ["MOBILEWEB", "PCWEB"],
+    "visible": ["APP"]
+  }
+}
