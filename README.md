@@ -15,6 +15,7 @@
 | 组件   | 介绍                            |
 | ------ | ------------------------------- |
 | Button | 支持小程序和 web 的多端组件示例 |
+| Gantt  | 支持 web 端组件示例             |
 
 ## 使用指南
 
@@ -22,7 +23,7 @@
 
 1.  确保拥有腾讯云账号、开通微搭低代码；
 2.  确保本地安装  [Node.js](https://nodejs.org/en/)
-3.  在微搭平台中[新建一个组件库](https://docs.cloudbase.net/lowcode/custom-components/quick-start/comps) ，组件库标识使用`weda_custom_components`
+3.  在微搭平台中[新建一个组件库](https://docs.cloudbase.net/lowcode/custom-components/quick-start/comps) ，组件库标识使用`wedaCustom`
 
 ### 快速开始
 
@@ -67,8 +68,9 @@ tcb lowcode publish
 
 1. Fork 这个仓库
 2. 创建一个新的分支
-3. 提交您的更改
-4. 创建一个 Pull Request
+3. 可参考[自定义组件实现](https://cloud.tencent.com/document/product/1301/72177),完成组件开发
+4. 提交您的更改
+5. 创建一个 Pull Request
 
 ## 许可证
 
