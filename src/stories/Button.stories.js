@@ -2,16 +2,10 @@ import React from 'react';
 
 import { Button } from '../web/components';
 
-import config from '../configs/components/button.json';
-
-const { meta } = config;
-
 export default {
-  title: `${meta.category}/${meta.title}`,
+  title: '表单/按钮',
   component: Button,
-  argTypes: {
-    // backgroundColor: { control: 'color' },
-  },
+  tags: ['autodocs'],
 };
 
 const Template = (args) => <Button {...args} />;
@@ -22,8 +16,8 @@ Primary.args = {
   text: '按钮',
   type: 'primary',
   events: {
-    customevent: () => {}
-  }
+    customevent: () => {},
+  },
 };
 
 export const Mini = Template.bind({});
@@ -32,8 +26,8 @@ Mini.args = {
   text: '按钮',
   size: 'mini',
   events: {
-    customevent: () => {}
-  }
+    customevent: () => {},
+  },
 };
 
 export const Default = Template.bind({});
@@ -42,6 +36,6 @@ Default.args = {
   type: 'default',
   text: '按钮',
   events: {
-    customevent: () => {}
-  }
+    customevent: () => {},
+  },
 };

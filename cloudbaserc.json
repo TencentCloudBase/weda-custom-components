@@ -1,7 +1,7 @@
 {
   "envId": "{{envId}}",
   "lowcodeCustomComponents": {
-    "name": "weda_custom_components",
+    "name": "wedaCustom",
     "configRoot": "./src/configs",
     "platformRoot": {
       "web": {
