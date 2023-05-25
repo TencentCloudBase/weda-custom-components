@@ -1,15 +1,10 @@
 ---
-to: src/web/components/<%= h.changeCase.paramCase(compName) %>/index.tsx
+to: src/web/components/<%= h.changeCase.paramCase(compName) %>/index.jsx
 
 ---
 import * as React from 'react';
-import { CommonPropsType } from '../../types';
 
-export interface PropsType extends CommonPropsType {
-
-}
-
-export default function <%= compName %> (props: PropsType) {
+export default function <%= compName %> (props) {
   const {
     className,
     id,
