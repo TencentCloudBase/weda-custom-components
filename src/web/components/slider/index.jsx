@@ -17,7 +17,18 @@ const Slider = React.forwardRef(function Slider(props, inputRef) {
     $widget,
     markValueOnly,
   } = props;
-  const { value, disabled, onChange, readOnly } = useFormInputTrait({
+
+  const {
+    /* 兼容受控与非受控的 value */
+    value,
+    /* 禁用状态 */
+    disabled,
+    /* 只读状态 */
+    readOnly,
+    /* 封装后的onChange */
+    onChange,
+  } = useFormInputTrait({
+    /** runtime 传入的 widget 实例 */
     $widget,
     inputRef,
     name: props.name,
@@ -28,6 +39,7 @@ const Slider = React.forwardRef(function Slider(props, inputRef) {
   const changeHandler = React.useCallback(
     (value) => {
       onChange?.(value);
+      /* 调用change回调函数 */
       events?.change?.({ value });
     },
     [events]
@@ -63,6 +75,7 @@ Slider.propTypes = {
   markValueOnly: PropTypes.bool,
   onChange: PropTypes.func,
 
+  /** runtime 传入的 widget 实例 */
   $widget: PropTypes.object,
 };
 
