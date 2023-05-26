@@ -33,7 +33,6 @@
 npm install
 npm install -g @cloudbase/cli
 tcb login
-tcb lowcode debug
 ```
 
 ### 开发工作流
@@ -45,6 +44,18 @@ tcb lowcode debug
 ```
 
 打开微搭编辑器调试本地组件
+
+
+#### 添加组件
+
+
+```bash
+npm run new 
+```
+
+输入要创建的组件名，例如 `Image`, 会自动创建相关的组件初始配置和文件结构
+
+![](https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/75fe5c62-eaa6-4f4e-8329-7eac1cbf5cfa.png)
 
 #### 检查
 
