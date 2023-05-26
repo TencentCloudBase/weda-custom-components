@@ -6,7 +6,8 @@
     "test": "react-scripts test",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "eslint src --fix"
+    "lint": "eslint src --fix",
+    "new": "npx hygen comp new"
   },
   "keywords": [
     "weda",
