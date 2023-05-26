@@ -18,10 +18,11 @@
   "license": "MIT",
   "description": "腾讯云微搭低代码组件库模板",
   "dependencies": {
+    "@cloudbase/weda-ui": "^3.4.11",
     "gantt-task-react": "^0.3.9",
     "prop-types": "^15.7.2",
-    "weui": "^2",
-    "react-error-boundary": "^3.1.4"
+    "react-error-boundary": "^3.1.4",
+    "weui": "^2"
   },
   "peerDependencies": {
     "react": ">=18.0.0"

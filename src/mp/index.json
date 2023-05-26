@@ -1,5 +1,6 @@
 {
   "components": {
+    "Slider": "components/slider/index",
     "Button": "components/button/index"
   },
   "actions": {

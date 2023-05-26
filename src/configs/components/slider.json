@@ -1,0 +1,73 @@
+{
+  "$schema": "https://comp-public-1303824488.cos.ap-shanghai.myqcloud.com/schema/lcds_component.json",
+  "data": {
+    "properties": {
+      "name": {
+        "title": "绑定字段",
+        "type": "string",
+        "default": "slide",
+        "x-index": 10,
+        "x-rules": [
+          {
+            "message": "该字段必填",
+            "required": true
+          },
+          {
+            "message": "必须以字母开头，仅能输入字母或下划线或数字",
+            "pattern": "^[a-zA-Z][0-9a-zA-Z_]*$"
+          }
+        ],
+        "required": true,
+        "description": "表单字段的Key值，用于提交数据时，匹配数据模型字段标识。页面内需保证唯一。",
+        "x-props": {
+          "data-hidebind-variable": true
+        }
+      },
+      "min": {
+        "type": "number",
+        "title": "最小值",
+        "x-index": 20,
+        "default": 0
+      },
+      "max": {
+        "type": "number",
+        "title": "最大值",
+        "x-index": 30,
+        "default": 20
+      },
+      "step": {
+        "type": "number",
+        "title": "步长",
+        "description": "必须大于 0，且可被 (max - min) 除尽",
+        "x-index": 40,
+        "default": 1
+      },
+      "value": {
+        "type": "number",
+        "title": "值",
+        "default": 0,
+        "x-index": 50
+      },
+      "disabled": {
+        "type": "boolean",
+        "title": "禁用",
+        "x-index": 60,
+        "default": false
+      },
+      "markValueOnly": {
+        "type": "boolean",
+        "title": "是否只能拖拽到刻度上",
+        "x-index": 70,
+        "default": false
+      }
+    }
+  },
+  "events": [{ "name": "change", "title": "change 事件" }],
+  "meta": {
+    "name": "Slider",
+    "title": "滑块",
+    "description": "滑动输入器",
+    "category": "表单",
+    "icon": "../icons/Icon.svg"
+  }
+}
