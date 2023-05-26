@@ -18,7 +18,7 @@
   "license": "MIT",
   "description": "腾讯云微搭低代码组件库模板",
   "dependencies": {
-    "@cloudbase/weda-ui": "^3.4.11",
+    "@cloudbase/weda-ui": "^3.5.0",
     "gantt-task-react": "^0.3.9",
     "prop-types": "^15.7.2",
     "react-error-boundary": "^3.1.4",
