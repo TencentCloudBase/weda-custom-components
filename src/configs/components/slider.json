@@ -62,6 +62,9 @@
       }
     }
   },
+  "compConfig": {
+    "componentType": "formField"
+  },
   "events": [{ "name": "change", "title": "change 事件" }],
   "meta": {
     "name": "Slider",
