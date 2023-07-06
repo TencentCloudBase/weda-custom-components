@@ -16,7 +16,7 @@
 | ------ | ------------------------------- |
 | [Button](src/web/components/button) | 支持小程序和 web 的多端按钮组件示例 |
 | [Gantt](/src/web/components/gantt)  | 支持 web 端，甘特图组件示例             |
-| [Slider](/src/web/components/slide)  | 支持 web 端，滑块组件，自定义表单组件示例          |
+| [Slider](/src/web/components/slider)  | 支持 web 端，滑块组件，自定义表单组件示例          |
 ## 使用指南
 
 ### 前置依赖
