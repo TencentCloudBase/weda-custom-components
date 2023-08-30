@@ -1,0 +1,3 @@
+<block>
+  <mp-uploader upload="{{upload}}" bindsuccess="onSuccess" bindfail="onSuccess"></mp-uploader>
+</block>

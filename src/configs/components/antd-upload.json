@@ -1,0 +1,44 @@
+{
+  "$schema": "https://comp-public-1303824488.cos.ap-shanghai.myqcloud.com/schema/lcds_component.json",
+  "data": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "title": "字段action",
+        "x-index": 10,
+        "default": "https://example.com/TODO"
+      },
+      "callbacks": {
+        "type": "object",
+        "title": "回调函数",
+        "x-index": 20,
+        "x-props": {
+          "data-hidebind": true
+        },
+        "properties": {
+          "beforeUpload": {
+            "type": "object",
+            "x-props": {
+              "data-hidebind": true
+            },
+            "properties": {
+              "handler": {
+                "type": "object",
+                "title": "函数"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "events": [{ "name": "change", "title": "change 事件" }],
+  "meta": {
+    "name": "AntdUpload",
+    "title": "Antd 上传示例",
+    "description": "Antd 上传示例",
+    "category": "示例",
+    "icon": "../icons/Icon.svg"
+  }
+}

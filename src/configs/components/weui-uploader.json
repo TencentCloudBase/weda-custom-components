@@ -1,0 +1,38 @@
+{
+  "$schema": "https://comp-public-1303824488.cos.ap-shanghai.myqcloud.com/schema/lcds_component.json",
+  "data": {
+    "type": "object",
+    "properties": {
+      "callbacks": {
+        "type": "object",
+        "title": "回调函数",
+        "x-index": 20,
+        "x-props": {
+          "data-hidebind": true
+        },
+        "properties": {
+          "beforeUpload": {
+            "type": "object",
+            "properties": {
+              "handler": {
+                "type": "object",
+                "title": "函数"
+              }
+            },
+            "x-props": {
+              "data-hidebind": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "events": [{ "name": "change", "title": "change 事件" }],
+  "meta": {
+    "name": "WeuiUploader",
+    "title": "Weui 上传示例",
+    "description": "Weui 上传示例",
+    "category": "示例",
+    "icon": "../icons/Icon.svg"
+  }
+}

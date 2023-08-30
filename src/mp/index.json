@@ -1,5 +1,7 @@
 {
   "components": {
+    "WeuiUploader": "components/weui-uploader/index",
+    "AntdUpload": "components/antd-upload/index",
     "Slider": "components/slider/index",
     "Button": "components/button/index"
   },

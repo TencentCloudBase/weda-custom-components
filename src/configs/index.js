@@ -4,7 +4,15 @@ import Gantt from './components/gantt.json';
 
 import Slider from './components/slider.json';
 
+import AntdUpload from './components/antd-upload.json';
+
+import WeuiUploader from './components/weui-uploader.json';
+
 export const components = {
+  WeuiUploader,
+
+  AntdUpload,
+
   Slider,
 
   Button,
