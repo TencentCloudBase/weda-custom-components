@@ -13,21 +13,11 @@
         "type": "object",
         "title": "回调函数",
         "x-index": 20,
-        "x-props": {
-          "data-hidebind": true
-        },
         "properties": {
           "beforeUpload": {
             "type": "object",
-            "x-props": {
-              "data-hidebind": true
-            },
-            "properties": {
-              "handler": {
-                "type": "object",
-                "title": "函数"
-              }
-            }
+            "title": "函数",
+            "properties": {}
           }
         }
       }
