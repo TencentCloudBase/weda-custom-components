@@ -67,7 +67,7 @@ Component({
     if (!this.data.ec) {
       console.warn(
         '组件需绑定 ec 变量，例：<ec-canvas id="mychart-dom-bar" ' +
-          'canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>',
+          'canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>'
       );
       return;
     }
@@ -96,11 +96,13 @@ Component({
           console.error(
             '微信基础库版本过低，需大于等于 1.9.91。' +
               '参见：https://github.com/ecomfe/echarts-for-weixin' +
-              '#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82',
+              '#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82'
           );
           return;
         } else {
-          console.warn('建议将微信基础库调整大于等于2.9.0版本。升级后绘图将有更好性能');
+          console.warn(
+            '建议将微信基础库调整大于等于2.9.0版本。升级后绘图将有更好性能'
+          );
           this.initByOldWay(callback);
         }
       }
@@ -122,8 +124,16 @@ Component({
         .boundingClientRect(async (res) => {
           if (typeof callback === 'function') {
             this.chart = callback(canvas, res.width, res.height, canvasDpr);
-          } else if (this.data.ec && typeof this.data.ec.onInit === 'function') {
-            this.chart = await this.data.ec.onInit(canvas, res.width, res.height, canvasDpr);
+          } else if (
+            this.data.ec &&
+            typeof this.data.ec.onInit === 'function'
+          ) {
+            this.chart = await this.data.ec.onInit(
+              canvas,
+              res.width,
+              res.height,
+              canvasDpr
+            );
           } else {
             this.triggerEvent('init', {
               canvas: canvas,
@@ -143,34 +153,54 @@ Component({
         .select(`#${this.data.canvasId}`)
         .fields({ node: true, size: true })
         .exec(async (res) => {
-          const canvasNode = res[0].node;
-          this.canvasNode = canvasNode;
+          const canvasNode = res[0]?.node;
+          if (canvasNode) {
+            this.canvasNode = canvasNode;
 
-          const canvasDpr = wx.getSystemInfoSync().pixelRatio;
-          const canvasWidth = res[0].width;
-          const canvasHeight = res[0].height;
+            const canvasDpr = wx.getSystemInfoSync().pixelRatio;
+            const canvasWidth = res[0].width;
+            const canvasHeight = res[0].height;
 
-          const ctx = canvasNode.getContext('2d');
+            const ctx = canvasNode.getContext('2d');
 
-          const canvas = new WxCanvas(ctx, this.data.canvasId, true, canvasNode);
-          echarts.setCanvasCreator(() => {
-            return canvas;
-          });
-
-          if (typeof callback === 'function') {
-            this.chart = callback(canvas, canvasWidth, canvasHeight, canvasDpr);
-          } else if (this.data.ec && typeof this.data.ec.onInit === 'function') {
-            this.chart = await this.data.ec.onInit(canvas, canvasWidth, canvasHeight, canvasDpr);
-          } else {
-            this.triggerEvent('init', {
-              canvas: canvas,
-              width: canvasWidth,
-              height: canvasHeight,
-              dpr: canvasDpr,
+            const canvas = new WxCanvas(
+              ctx,
+              this.data.canvasId,
+              true,
+              canvasNode
+            );
+            echarts.setCanvasCreator(() => {
+              return canvas;
             });
-          }
 
-          this.domObserver && this.domObserver.disconnect();
+            if (typeof callback === 'function') {
+              this.chart = callback(
+                canvas,
+                canvasWidth,
+                canvasHeight,
+                canvasDpr
+              );
+            } else if (
+              this.data.ec &&
+              typeof this.data.ec.onInit === 'function'
+            ) {
+              this.chart = await this.data.ec.onInit(
+                canvas,
+                canvasWidth,
+                canvasHeight,
+                canvasDpr
+              );
+            } else {
+              this.triggerEvent('init', {
+                canvas: canvas,
+                width: canvasWidth,
+                height: canvasHeight,
+                dpr: canvasDpr,
+              });
+            }
+
+            this.domObserver && this.domObserver.disconnect();
+          }
         });
     },
     canvasToTempFilePath(opt) {
@@ -244,12 +274,14 @@ Component({
     observeModuleExpose() {
       this.domObserver && this.domObserver.disconnect();
       this.domObserver = wx.createIntersectionObserver(this);
-      this.domObserver.relativeToViewport().observe(`#${this.data.canvasId}`, (res) => {
-        // 当页面出现图表时再绘制图表，避免出现白屏
-        if (res.intersectionRatio) {
-          this.init();
-        }
-      });
+      this.domObserver
+        .relativeToViewport()
+        .observe(`#${this.data.canvasId}`, (res) => {
+          // 当页面出现图表时再绘制图表，避免出现白屏
+          if (res.intersectionRatio) {
+            this.init();
+          }
+        });
     },
   },
   lifetimes: {
