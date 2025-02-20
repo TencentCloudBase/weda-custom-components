@@ -14,9 +14,9 @@
 
 | 组件   | 介绍                            |
 | ------ | ------------------------------- |
-| Button | 支持小程序和 web 的多端按钮组件示例 |
+| [Button](src/web/components/button) | 支持小程序和 web 的多端按钮组件示例 |
 | [Gantt](/src/web/components/gantt)  | 支持 web 端，甘特图组件示例             |
-
+| [Slider](/src/web/components/slider)  | 支持 web 端，滑块组件，自定义表单组件示例          |
 ## 使用指南
 
 ### 前置依赖
@@ -33,7 +33,6 @@
 npm install
 npm install -g @cloudbase/cli
 tcb login
-tcb lowcode debug
 ```
 
 ### 开发工作流
@@ -45,6 +44,18 @@ tcb lowcode debug
 ```
 
 打开微搭编辑器调试本地组件
+
+
+#### 添加组件
+
+
+```bash
+npm run new 
+```
+
+输入要创建的组件名，例如 `Image`, 会自动创建相关的组件初始配置和文件结构
+
+![](https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/75fe5c62-eaa6-4f4e-8329-7eac1cbf5cfa.png)
 
 #### 检查
 
