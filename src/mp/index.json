@@ -1,6 +1,7 @@
 {
   "components": {
-    "Button": "components/button/index"
+    "Button": "components/button/index",
+    "Chart": "components/chart/echart/index"
   },
   "actions": {
     "showToast": "actions/showToast/index"
