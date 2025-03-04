@@ -1,0 +1,31 @@
+{
+  "$schema": "https://comp-public-1303824488.cos.ap-shanghai.myqcloud.com/schema/lcds_component.json",
+  "data": {
+    "type": "object",
+    "properties": {
+      "option": {
+        "title": "图表配置项（option）",
+        "default": {},
+        "type": "object",
+        "x-component": "jsontext",
+        "x-index": 10
+      },
+      "dark": {
+        "title": "深色模式",
+        "type": "boolean",
+        "default": false,
+        "x-index": 20
+      }
+    }
+  },
+  "events": [{ "name": "onReady", "title": "图表Ready" }],
+  "meta": {
+    "title": "图表",
+    "description": "这是一个万能的图表组件，可配置出多种图表如折线图、饼状图、面积图、地图、漏斗图、仪表盘等所有的图表",
+    "icon": "../icons/Icon.svg",
+    "category": "图表",
+    "componentOrder": 1,
+    "platform": ["MP"],
+    "visible": ["APP"]
+  }
+}
